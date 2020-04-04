@@ -150,6 +150,7 @@ macro(COLMAP_ADD_EXECUTABLE TARGET_NAME)
     add_executable(${TARGET_NAME} ${ARGN})
     set_target_properties(${TARGET_NAME} PROPERTIES FOLDER
         ${COLMAP_TARGETS_ROOT_FOLDER}/${FOLDER_NAME})
+	target_compile_features(${TARGET_NAME} PRIVATE cxx_std_17)
     target_link_libraries(${TARGET_NAME} colmap)
     if(VCPKG_BUILD)
         install(TARGETS ${TARGET_NAME} DESTINATION tools/)

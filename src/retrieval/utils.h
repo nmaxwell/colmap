@@ -52,7 +52,7 @@ struct ImageScore {
 template <int N, int kSigma = 16>
 class HammingDistWeightFunctor {
  public:
-  static const size_t kMaxHammingDistance = static_cast<size_t>(1.5f * kSigma);
+  static const size_t kMaxHammingDistance = static_cast<size_t>((3 * kSigma) / 2);
 
   HammingDistWeightFunctor() {
     // Fills the look-up table.
